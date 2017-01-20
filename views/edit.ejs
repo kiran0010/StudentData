@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>college </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<style>
+body {
+	background-image: url(/images/clg.jpg);
+	background-size: cover;
+
+}
+label {
+	color: rgb(143, 49, 49);
+	font-size: 20px;
+	
+	width: 200px;
+}
+</style>
+<!-- <script src="jquery-3.1.1.min.js"></script> -->
+</head>
+<body>
+  <div class="container-fluid" role="main" >
+    <!-- <img src="clg.jpg">  -->
+
+	  <div class="row" style="height: 100px">
+	      <h1 style="text-align: center; color: black"><b>STUDENT DATA</b></h1>
+	    </div>
+	    <div class="row">
+	    <!-- left spce -->
+	    <div class="col-sm-1">
+	    	
+	    </div>
+	    <div class="col-sm-10" style="background-color: rgba(51, 116, 183, 0.42);">
+	  <!-- first row -->
+	    <div class="row" style="height: 50px">
+	      <div class="col-sm-6">
+
+	        <label>First Name <span class="required">*</span>
+	        </label>
+	        <input class="pull-right form-control" value="<%=student.name.fname%>" type="text" name="name" id="fname" style="width: 300px; text-transform:uppercase"></input> 
+	      </div>  
+	      <div class="col-sm-6" >
+
+
+	      <label>Last Name <span class="required">*</span>
+	        </label>
+	        <input class="pull-right form-control" value="<%=student.name.lname%>" type="text" name="name" id="lname" style="width: 300px; text-transform:uppercase"></input> 
+	        <!-- <label >Roll <span class="required">*</span>
+	        </label>
+	        <input class="pull-right form-control" type="text" id="roll" maxlength="5" onkeypress='return event.charCode >= 48 && event.charCode <= 57' style="width: 300px"></input>  -->
+	      </div>  		
+	    </div>
+	    <!-- first row end -->
+	    <!-- 2nd row start -->
+	    <div class="row" style="height: 50px">
+	      <div class="col-sm-6" >
+	        <label >Reg no <span class="required">*</span>
+	        </label>
+	        <input class="pull-right form-control" value="<%=student.reg%>" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="10" id="reg" style="width: 300px"></input> 
+	      </div>  
+	      <div class="col-sm-6">
+	        <label >college name <span class="required">*</span>
+	        </label>
+	        <input class="pull-right form-control" value="<%=student.clgName%>" type="text" id="clg" style="width: 300px"></input> 
+	      </div>  		
+	    </div>
+	    <!-- 2nd row end -->
+	    <!-- 3rd row start -->
+	    <div class="row" style="height: 50px">
+	      <div class="col-sm-6" >
+	        <label >Age <span class="required">*</span>
+	        </label>
+	        <input class="pull-right form-control" value="<%=student.age%>" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="3" id="age" style="width: 300px"></input> 
+	      </div>  
+	      <div class="col-sm-6">
+	        <label >city<span class="required">*</span>
+	        </label>
+	        <input class="pull-right form-control" value="<%=student.address.city%>" type="text" id="city" style="width: 300px" ></input> 
+	      </div>  		
+	    </div>
+	    <!-- 3rd row end -->
+	    <!-- 4th row start -->
+	    <div class="row" style="height: 50px">
+	       
+	      <div class="col-sm-6">
+	        <label >country<span class="required">*</span>
+	        </label>
+	        <!-- <input class="pull-right form-control" type="text" id="country" style="width: 300px"> -->
+	        	<input class="pull-right form-control" value="<%=student.address.country%>" type="text" id="country" style="width: 300px"></input> 
+	        <!-- </input>  -->
+	      </div> 
+	      <div class="col-sm-6" >
+	        <label >state <span class="required">*</span>
+	        </label>
+	        <input class="pull-right form-control" value="<%=student.address.state%>" type="text" id="state1" style="width: 300px"></input> 
+	      </div>  		
+	    </div>
+	    <!-- 4th row end -->
+	    <div class="col-sm-6" >
+	    <label >Roll <span class="required">*</span>
+	        </label>
+	        <input class="pull-right form-control" value="<%=student.roll%>" type="text" id="roll" maxlength="5" onkeypress='return event.charCode >= 48 && event.charCode <= 57' style="width: 300px"></input> 
+	        </div>
+	    </div>
+	    <!-- right space -->
+	    <div class="col-sm-1"></div>
+	    </div>
+	    <center>
+	    <div class="btn-group">
+	    <button class="btn btn-primary " id="button1" type="submit" >Submit</button>
+	    
+	    </div>
+	    </center>
+  </div>
+
+<script src="/javascripts/data.js"></script>
+
+</body>
+</html>
