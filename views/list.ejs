@@ -1,58 +1,63 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <title>student Data</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
   </head>
-  <body>
-    <!-- <p>
-    <ul>
-    	<% students.forEach(function(e){ %>
-    	<li><%= e %></li>
+	<body>
+	  <table class="table table-bordered">
+	    <thead>
+	      <tr>
+	        <th>SlNo</th>
+	        <th>Name</th>
+	        <th>regNo</th>
+	        <th>rollNo</th>
+	        <th>clgName</th>
+	        <th>city</th>
+	        <th>country</th>
+	        <th>state</th>
+	        <th>Action</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <% students.forEach(function(e,i){ %>
+	      <tr>
+	      	<td><%= i %></td>
+	      	<td><%= e.name.fname+' '+e.name.lname %></td>
+	      	<td><%= e.reg %></td>
+	      	<td><%= e.roll %></td>
+	      	<td><%= e.clgName %></td>
+	      	<td><%= e.address.city %></td>
+	      	<td><%= e.address.country %></td>
+	      	<td><%= e.address.state %></td>
+	      	<td> 
+	      		<button class="btn btn-success btn-edit" type="button" id="bt2" data-student-id="<%= e._id%>">edit</button>
+	      		<button class="btn btn-danger" type="button" id="bt3" data-student-id="<%= e._id%>">delete</button></td>
+				</tr>
+				<%})%>
+	    </tbody>
+	  </table>
 
-    	<%})%>
-    	</ul>
-    </p> -->
-    <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>SlNo</th>
-        <th>Name</th>
-        <th>regNo</th>
-        <th>rollNo</th>
-        <th>clgName</th>
-        <th>city</th>
-        <th>country</th>
-        <th>state</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% students.forEach(function(e,i){ %>
-      <tr>
-      	<td><%= i %></td>
-      	<td><%= e.name.fname+' '+e.name.lname %></td>
-      	<td><%= e.reg %></td>
-      	<td><%= e.roll %></td>
-      	<td><%= e.clgName %></td>
-      	<td><%= e.address.city %></td>
-      	<td><%= e.address.country %></td>
-      	<td><%= e.address.state %></td>
-      	<td> 
-      		<button class="btn btn-success btn-edit" type="button" id="bt2" data-student-id="<%= e._id%>">edit</button>
-      		<button class="btn btn-danger" type="button" id="bt3" data-student-id="<%= e._id%>">delete</button></td>
-		</tr>
-		<%})%>
-    </tbody>
-  </table>
-
-  <script type="text/javascript">
-  	$(".btn-edit").click(function(e){
-  		e.preventDefault();
-  		window.location.href = "/student/edit/"+$(this).data("student-id")
-  	})
-  </script>
+	  <script type="text/javascript">
+	  	$(".btn-edit").click(function(e){
+	  		e.preventDefault();
+	  		window.location.href = "/student/edit/"+$(this).data("student-id")
+	  	})
+	  	$(".btn-danger").click(function(e){
+	  		e.preventDefault();
+	  		var sid = $(this).data("student-id");
+  		    $.ajax({
+		        url : '/student/'+sid,
+		        type: 'delete',
+		        data : sid,
+		        success : function(result){		            
+	            console.log(result);
+	            window.location.reload();
+		        }
+  		    });   
+	  	});
+	  </script>
   </body>
 </html>
