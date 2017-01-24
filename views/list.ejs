@@ -9,31 +9,31 @@
 	<body>
 		<p>
 		  <table class="table table-bordered">
-		    <thead>
+		    <thead bgcolor="lightblue">
 		      <tr>
-		        <th>SlNo</th>
-		        <th>Name</th>
-		        <th>regNo</th>
-		        <th>rollNo</th>
-		        <th>clgName</th>
-		        <th>city</th>
-		        <th>country</th>
-		        <th>state</th>
-		        <th>Action</th>
+		        <th class="text-center">SlNo</th>
+		        <th class="text-center">Name</th>
+		        <th class="text-center">regNo</th>
+		        <th class="text-center">rollNo</th>
+		        <th class="text-center">clgName</th>
+		        <th class="text-center">city</th>
+		        <th class="text-center">country</th>
+		        <th class="text-center">state</th>
+		        <th class="text-center">Action</th>
 		      </tr>
 		    </thead>
 		    <tbody>
 		      <% students.forEach(function(e,i){ %>
 		      <tr>
-		      	<td><%= i %></td>
-		      	<td><%= e.name.fname+' '+e.name.lname %></td>
-		      	<td><%= e.reg %></td>
-		      	<td><%= e.roll %></td>
-		      	<td><%= e.clgName %></td>
-		      	<td><%= e.address.city %></td>
-		      	<td><%= e.address.country %></td>
-		      	<td><%= e.address.state %></td>
-		      	<td> 
+		      	<td class="text-center"><%= i %></td>
+		      	<td class="text-center"><%= e.name.fname+' '+e.name.lname %></td>
+		      	<td class="text-center"><%= e.reg %></td>
+		      	<td class="text-center"><%= e.roll %></td>
+		      	<td class="text-center"><%= e.clgName %></td>
+		      	<td class="text-center"><%= e.address.city %></td>
+		      	<td class="text-center"><%= e.address.country %></td>
+		      	<td class="text-center"><%= e.address.state %></td>
+		      	<td class="text-center"> 
 		      		<button class="btn btn-success btn-edit" type="button" id="bt2" data-student-id="<%= e._id%>">Edit</button>
 		      		<button class="btn btn-danger" type="button" id="bt3" data-student-id="<%= e._id%>">Delete</button>		      		
 		      	</td>
